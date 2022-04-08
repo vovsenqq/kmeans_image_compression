@@ -2,9 +2,9 @@
 
 ### Changing count of picture's colors
 
-If you have not cv2\
+If you have not cv2
 
-Enter this in your console  `pip install opencv-python`
+Enter this in your console  `pip install opencv-python`\
 
 Change this value for increase/decrease count of colors
 47    `clusters = get_clusters(5)`
