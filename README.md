@@ -2,7 +2,7 @@
 
 ### Changing count of picture's colors
 
-If you have not cv2
+If you don't cv2
 
 Enter this in your console  `pip install opencv-python`
 
