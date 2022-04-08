@@ -3,15 +3,15 @@ import numpy as np
 import random
 import math
 
-def get_first_point():
+def get_first_point():      # Bad realization, better use pixels from image
     return [random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)]
 
 
-def get_distance(p1, p2):
+def get_distance(p1, p2):       # Calculate euclidean distance
     return round(math.sqrt((p2[0]-p1[0])**2 + (p2[1]-p1[1])**2 + (p2[2]-p1[2])**2))
 
 
-def get_centroid(clusters, im):
+def get_centroid(clusters, im):     
     clusters_new = []
     for i in range(len(clusters)):
         a = []
@@ -41,10 +41,10 @@ def get_clusters(count):
 
 
 if __name__ == "__main__":
-    im = cv2.imread("beb.jpg")
+    im = cv2.imread("your_image.jpg")
     height, width = im.shape[0], im.shape[1]
     shodimost = 5
-    clusters = get_clusters(5)
+    clusters = get_clusters(5)      # You can change this value for increase/decrease count of colors
     for i in range(height):
         for j in range(width):
             dist_best = 1000000
@@ -80,7 +80,7 @@ if __name__ == "__main__":
 
 
     vis = im
-    for i in range(len(clusters)):
+    for i in range(len(clusters)):      # Add visualization for result of work
         im2 = np.zeros((200, 20, 3), np.uint8)
         start_point = (0, 0)
         end_point = ((i+1)*20, 200)
@@ -90,6 +90,6 @@ if __name__ == "__main__":
         vis = np.concatenate((vis, im2), axis=1)
 
 
-    cv2.imwrite('imnew.jpg', im)
+    cv2.imwrite('your_new_image.jpg', im)       # Saving new image
     cv2.imshow('kek', vis)
     cv2.waitKey(0) 
