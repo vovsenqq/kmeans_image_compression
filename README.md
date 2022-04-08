@@ -8,7 +8,7 @@ Enter this in your console  `pip install opencv-python`
 
 Change this value for increase/decrease count of colors
 
-47.    `clusters = get_clusters(5)`
+line 47.    `clusters = get_clusters(5)`
 
 ## Example of work
 
